@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroPoster from "@/assets/nature-mountains.jpg";
 
 const HERO_VIDEO = "http://storage.googleapis.com/stock-footage-vids/hero/0715(2).mp4#t=0.001";
 
@@ -20,23 +19,11 @@ const HeroSection = ({ onComingSoon }: HeroSectionProps) => {
           autoPlay
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           disablePictureInPicture
           controlsList="nodownload"
-          poster={heroPoster}
           className="absolute inset-0 h-full w-full object-cover"
           style={{ backgroundColor: '#000' }}
-        />
-        {/* Fallback image for when video fails to load */}
-        <img
-          src={heroPoster}
-          alt="Nature mountains"
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ display: 'none' }}
-          onError={(e) => {
-            e.currentTarget.style.display = 'block';
-            e.currentTarget.previousElementSibling?.remove();
-          }}
         />
       </div>
       {/* Dark overlay */}
