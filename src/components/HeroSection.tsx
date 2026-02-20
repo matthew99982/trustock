@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroVideo from "@/assets/video-mountains.mp4";
 import heroPoster from "@/assets/nature-mountains.jpg";
+
+const HERO_VIDEO = "http://storage.googleapis.com/stock-footage-vids/hero/0715(2).mp4#t=0.001";
 
 interface HeroSectionProps {
   onComingSoon: () => void;
@@ -14,7 +15,7 @@ const HeroSection = ({ onComingSoon }: HeroSectionProps) => {
       {/* Hero video background with fallback image */}
       <div className="absolute inset-0 bg-black">
         <video
-          src={heroVideo}
+          src={HERO_VIDEO}
           muted
           autoPlay
           loop
