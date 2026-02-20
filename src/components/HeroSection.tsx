@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const HERO_VIDEO = "http://storage.googleapis.com/stock-footage-vids/hero/0715(2).mp4";
-const HERO_POSTER = "/nature-mountains.jpg";
+import heroVideo from "@/assets/video-mountains.mp4";
+import heroPoster from "@/assets/nature-mountains.jpg";
 
 interface HeroSectionProps {
   onComingSoon: () => void;
@@ -15,7 +14,7 @@ const HeroSection = ({ onComingSoon }: HeroSectionProps) => {
       {/* Hero video background with fallback image */}
       <div className="absolute inset-0 bg-black">
         <video
-          src={HERO_VIDEO}
+          src={heroVideo}
           muted
           autoPlay
           loop
@@ -23,13 +22,13 @@ const HeroSection = ({ onComingSoon }: HeroSectionProps) => {
           preload="metadata"
           disablePictureInPicture
           controlsList="nodownload"
-          poster={HERO_POSTER}
+          poster={heroPoster}
           className="absolute inset-0 h-full w-full object-cover"
           style={{ backgroundColor: '#000' }}
         />
         {/* Fallback image for when video fails to load */}
         <img
-          src={HERO_POSTER}
+          src={heroPoster}
           alt="Nature mountains"
           className="absolute inset-0 h-full w-full object-cover"
           style={{ display: 'none' }}
